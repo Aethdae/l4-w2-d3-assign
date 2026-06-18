@@ -3,18 +3,19 @@ import json
 
 def load_items():
     with open("items.json", "r") as file:
-        data = json.load(file)
+        data = json.load(file) or []
         return data
     return []
 
 def add_new_item(item):
-    data = []
-    with open("items.json", "r") as file:
-        data = json.load(file)
-        data.append(item)
+    data = load_items()
+    data.append(item)
     with open("items.json", "w") as file:
         file.write(json.dumps(data))
     return item
+    # with open("items.json", "r") as file:
+    #     data = json.load(file)
+    #     data.append(item)
 
 #Mostly testing various python related things, ignore
 class Type(StrEnum):
