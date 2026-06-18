@@ -1,9 +1,20 @@
 from enum import StrEnum
+import json
 
 def load_items():
-    return [{"name": "Sword", "type": Type.WEAPON, "value": 50},{"name": "Chestplate", "type": Type.ARMOR, "value": 150},{"name": "Dagger", "type": Type.WEAPON, "value": 15},{"name": "Health Potion", "type": Type.CONSUMABLE, "value": 5}, {"name": "Mana Potion", "type": Type.CONSUMABLE, "value": 5}]
+    with open("items.json", "r") as file:
+        data = json.load(file)
+        return data
+    return []
 
-
+def add_new_item(item):
+    data = []
+    with open("items.json", "r") as file:
+        data = json.load(file)
+        data.append(item)
+    with open("items.json", "w") as file:
+        file.write(json.dumps(data))
+    return item
 
 #Mostly testing various python related things, ignore
 class Type(StrEnum):
@@ -31,3 +42,4 @@ if __name__ == "__main__":
 
     for item in list_items:
         print("{\n", item.print_json(), "\n}")
+

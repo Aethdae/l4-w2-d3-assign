@@ -1,0 +1,8 @@
+[
+  { "name": "Sword", "type": "weapon", "value": 50 },
+  { "name": "Chestplate", "type": "armor", "value": 150 },
+  { "name": "Dagger", "type": "weapon", "value": 15 },
+  { "name": "Health Potion", "type": "consumable", "value": 5 },
+  { "name": "Mana Potion", "type": "consumable", "value": 5 },
+  { "name": "Robe", "type": "armor", "value": 20 }
+]
