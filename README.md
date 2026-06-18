@@ -22,6 +22,7 @@ Available routes:
   - "/items/create" : Adds an item to the list of items, and returns the created item.
 
   Header: `"Content-Type: application/json"`
+
   Json example:
 
   ```json
