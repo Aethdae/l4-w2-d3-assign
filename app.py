@@ -31,9 +31,10 @@ def search():
 @app.post("/items/create")
 def add_item():
     item = request.json
-    if "name" not in item and "value" not in item and "type" not in item:
+    if "name" in item and "value" in item and "type" in item:
         # stretch: add validation for each value
         item_added = add_new_item(item)
         return f"{item_added["name"]} created!", 201
-    return {"message": "Incorrect json format."}, 415
+    else:
+        return {"message": "Incorrect json format."}, 415
 
